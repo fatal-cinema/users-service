@@ -22,7 +22,7 @@
   "dependencies": {
     "@bugsnag/cuid": "^3.2.2",
     "@fatal-cinema/common": "^1.1.2",
-    "@fatal-cinema/contracts": "^1.10.0",
+    "@fatal-cinema/contracts": "^1.11.0",
     "@grpc/grpc-js": "^1.14.3",
     "@grpc/proto-loader": "^0.8.1",
     "@nestjs/common": "^11.0.1",

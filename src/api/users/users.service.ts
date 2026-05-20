@@ -1,5 +1,5 @@
 import { nullToUndefined, RpcStatus } from '@fatal-cinema/common'
-import { CreateUserRequest, GetMeRequest, GetMeResponse } from '@fatal-cinema/contracts/gen/users'
+import { CreateUserRequest, GetMeRequest, GetMeResponse, PatchUserRequest, PatchUserResponse } from '@fatal-cinema/contracts/gen/users'
 import { Injectable } from '@nestjs/common'
 import { RpcException } from '@nestjs/microservices'
 import { lastValueFrom } from 'rxjs'
@@ -44,5 +44,13 @@ export class UsersService {
 		const { id } = data
 
 		await this.usersRepository.create({ id: data.id })
+	}
+
+	async patchUser(data: PatchUserRequest): Promise<PatchUserResponse> {
+		const { userId, name } = data
+
+		await this.usersRepository.update(userId, { ...(!!name && { name }) })
+
+		return { ok: true }
 	}
 }

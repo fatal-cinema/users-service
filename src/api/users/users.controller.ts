@@ -5,6 +5,8 @@ import {
 	type CreateUserResponse,
 	type GetMeRequest,
 	type GetMeResponse,
+	type PatchUserRequest,
+	type PatchUserResponse,
 } from '@fatal-cinema/contracts/gen/users'
 import { Controller } from '@nestjs/common'
 import { GrpcMethod } from '@nestjs/microservices'
@@ -25,5 +27,10 @@ export class UsersController implements UsersServiceController {
 		await this.usersService.create(request)
 
 		return { ok: true }
+	}
+
+	@GrpcMethod(USERS_SERVICE_NAME, 'PatchUser')
+	async patchUser(request: PatchUserRequest): Promise<PatchUserResponse> {
+		return this.usersService.patchUser(request)
 	}
 }
