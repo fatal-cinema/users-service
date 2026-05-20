@@ -417,10 +417,15 @@
     "@eslint/core" "^0.17.0"
     levn "^0.4.1"
 
-"@fatal-cinema/common@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@fatal-cinema/common/-/common-1.1.2.tgz#8bf0b26344d5ff3a13868af47c97d62d5cd65996"
-  integrity sha512-HrKnQkJfbdMulOHVsWrn+MgPiM1rz3HQeDf4AesZRHklUdSiqNz+PZTdYRi43CN2Hmtr+QsIxcR12sNvyUpAyw==
+"@fatal-cinema/common@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@fatal-cinema/common/-/common-1.4.0.tgz#7b54c70b31d3352385f8c800ca1cd4996453f5c0"
+  integrity sha512-kBkCXFLK0fMdP3s9wAKDabP9nlRbi8w7uv0ZbWq2O1Q7W7GEdUP5UrRykJooOtGZoxAEgW8OlohqQnQXmFE+DA==
+  dependencies:
+    "@fatal-cinema/contracts" "^1.11.0"
+    "@nestjs/common" "^11.1.21"
+    "@nestjs/config" "^4.0.4"
+    "@nestjs/microservices" "^11.1.21"
 
 "@fatal-cinema/contracts@^1.11.0":
   version "1.11.0"
@@ -997,7 +1002,7 @@
     webpack "5.106.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@^11.0.1":
+"@nestjs/common@^11.0.1", "@nestjs/common@^11.1.21":
   version "11.1.21"
   resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-11.1.21.tgz#9a45c6c09e90cabfdcc4f9579877fb5d89924d3c"
   integrity sha512-YV1HYDGsm2rnR0vrLKidtrG6jYX5yqiIjeur1j8++dKGqhhsJ6cjMs0RfQRSTUH7IjgDemA59/znQ8nRrE0D9g==

@@ -1,10 +1,7 @@
-import { nullToUndefined, RpcStatus } from '@fatal-cinema/common'
+import { AccountGrpcClient, nullToUndefined, RpcStatus } from '@fatal-cinema/common'
 import { CreateUserRequest, GetMeRequest, GetMeResponse, PatchUserRequest, PatchUserResponse } from '@fatal-cinema/contracts/gen/users'
 import { Injectable } from '@nestjs/common'
 import { RpcException } from '@nestjs/microservices'
-import { lastValueFrom } from 'rxjs'
-
-import { AccountGrpcClient } from '@core/grpc/clients/account.client'
 
 import { UsersRepository } from './users.repository'
 
@@ -26,7 +23,7 @@ export class UsersService {
 				details: 'User not found',
 			})
 
-		const account = await lastValueFrom(this.accountClient.getAccount({ id }))
+		const account = await this.accountClient.call('getAccount', { id })
 
 		const userWithoutNulls = nullToUndefined(user)
 		return {
