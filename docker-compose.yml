@@ -1,6 +1,7 @@
 services:
   users-service:
     container_name: fatal-cinema-users-service
+    image: fatal-cinema/users-service:dev
     build:
       context: .
       dockerfile: Dockerfile
